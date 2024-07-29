@@ -1,13 +1,13 @@
 Package: ivhandbookReplication
-Title: What the Package Does (One Line, Title Case)
+Title: Replication of Mogstad and Torgovitsky (2024, Handbook of Labor Economics)
 Version: 0.0.0.9000
 Authors@R:
-    person(given = "First",
-           family = "Last",
+    person(given = "Alexander",
+           family = "Torgovitsky",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           email = "atorgovitsky@gmail.com")
+Description: Reproduces figures and tables that require some computation.
+  Three data sets are included.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
