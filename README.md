@@ -12,10 +12,10 @@ The following code replicates what is reported in the paper.
 There may be minor differences in the Card application due to randomness in the bootstrap for the propensity score weighting estimates and randomness in the sample splits for the double/debiased machine learning (DDML) estimates. 
 
 ```r
-runall("path/to/where/you/want/to/save/the/results")
+ivhandbook("path/to/where/you/want/to/save/the/results")
 ```
 
-The individual components that are run are:
+The individual components that are run inside `ivhandbook` are:
 
 ```r
   multi_weighting() # Figure XXX
@@ -27,9 +27,10 @@ The individual components that are run are:
   gelbach_comparisons(savedir) # A few comparison estimates discussed in the text
 ```
 
-All of these run quickly except for `card_app`, which takes a while (about twelve hours on my machine) because of the double/debiased machine learning estimates.
+All of these run quickly except for `card_app`, which takes a while (about twelve hours on my machine) because of the DDML estimates.
 Reducing `nsplits` will speed this up.
-The `nbs` (number of bootstraps) parameter refers to the bootstrapped standard errors for the propensity score weighting estimate, which are pretty quick (a couple of minutes).
+The `nbs` parameter controls the number of bootstrap replications for computing standard errors in the propensity score weighting estimate.
+These are pretty quick (a couple of minutes).
 
 ## Questions or comments?
 

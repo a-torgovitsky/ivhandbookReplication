@@ -4,12 +4,12 @@
 \name{ivhandbookReplication-package}
 \alias{ivhandbookReplication}
 \alias{ivhandbookReplication-package}
-\title{ivhandbookReplication: What the Package Does (One Line, Title Case)}
+\title{ivhandbookReplication: Replication of Mogstad and Torgovitsky (2024, Handbook of Labor Economics)}
 \description{
-What the package does (one paragraph).
+Reproduces figures and tables that require some computation. Three data sets are included.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Alexander Torgovitsky \email{atorgovitsky@gmail.com}
 
 }
 \keyword{internal}

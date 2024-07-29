@@ -46,7 +46,7 @@ save_table <- function(tb, colspec, savedir, fnstub) {
 #' top-level directory. A timestamped subdirectory will be created within it,
 #' and then results will be saved inside that subdirectory.
 #' @export
-runall <- function(resultsdir = fs::path_wd("results")) {
+ivhandbook <- function(resultsdir = fs::path_wd("results")) {
   savedir <- timestampdir(resultsdir)
 
   message("Saving in ", savedir)
@@ -74,8 +74,9 @@ runall <- function(resultsdir = fs::path_wd("results")) {
   gelbach_comparisons(savedir)
 
   message(
-    ">> Potential warnings:\n",
+    ">> Potential benign warnings:\n",
     ">> 1) Namespace overwrites because ddml uses AER and I use ivreg.\n",
-    ">> 2) ddml warnings about trimming, which are to be expected.\n"
+    ">> 2) ddml warnings about trimming, which are to be expected.\n",
+    ">> 3) ivmte warning about compatible solvers not installed.\n"
   )
 }
