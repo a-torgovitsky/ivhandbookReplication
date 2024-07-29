@@ -32,7 +32,11 @@ ae_sensitivity <- function(savedir = getwd()) {
     geom_hline(yintercept = wald + 2 * se, linetype = "dotted") +
     geom_hline(yintercept = wald - 2 * se, linetype = "dotted") +
     geom_line() +
-    geom_point(aes(x = 0, y = wald), color = "black", size = 2) +
+    geom_point(
+      data = data.frame(x = 0, y = wald),
+      aes(x = x, y = y),
+      color = "black", size = 2
+    ) +
     labs(
       x = "Proportion of defiers",
       y = "LATE that would rationalize the Wald estimate",
