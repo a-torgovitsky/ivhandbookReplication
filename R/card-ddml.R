@@ -5,6 +5,7 @@ mdl_nnet <- function(y, X, ...) {
   return(mdl)
 }
 
+#' @export
 predict.mdl_nnet <- function(object, newdata) {
   if (!inherits(object, "mdl_nnet")) {
     stop("The object is not of class 'mdl_nnet'")
