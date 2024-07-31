@@ -66,8 +66,7 @@ ivhandbook <- function(resultsdir = fs::path_wd("results")) {
 
   message("Starting Card data illustration...")
   set.seed(1984) # A fine vintage
-  # card_app(savedir, nbs = 500, nsplits = 100)
-  card_app(savedir, nbs = 2, nsplits = 2)
+  card_app(savedir, nbs = 500, nsplits = 100)
 
   message("Starting Gelbach data illustration...")
   gelbach_bounds(savedir)
