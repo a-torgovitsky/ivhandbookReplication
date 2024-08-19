@@ -21,7 +21,7 @@ run_lineariv <- function(df, XList) {
       select(coef = estimate, se = std.error) -> dfiv
     make_ramsey(XList[[i]]) %>%
       stats::lm(data = df, formula = .) %>%
-      lmtest::resettest() -> rt
+      lmtest::resettest(type = "fitted") -> rt
     rt[["parameter"]] <- NULL # Otherwise tidy will issue a warning/complaint/notice
     rt %>%
       broom::tidy() %>%
