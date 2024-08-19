@@ -75,6 +75,9 @@ ivhandbook <- function(
   gelbach_bounds(savedir)
   gelbach_comparisons(savedir)
 
+  message(rep("=", 80))
+  message("Finished")
+  message(rep("=", 80))
   message(
     ">> Potential benign warnings:\n",
     ">> 1) Namespace overwrites because ddml uses AER and I use ivreg.\n",
