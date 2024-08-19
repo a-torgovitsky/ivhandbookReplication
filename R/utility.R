@@ -45,8 +45,11 @@ save_table <- function(tb, colspec, savedir, fnstub) {
 #' @param resultsdir Directory where results will be saved. This is the
 #' top-level directory. A timestamped subdirectory will be created within it,
 #' and then results will be saved inside that subdirectory.
+#' @param testing Testing mode for development
 #' @export
-ivhandbook <- function(resultsdir = fs::path_wd("results")) {
+ivhandbook <- function(
+    resultsdir = fs::path_wd("results"),
+    testing = FALSE) {
   savedir <- timestampdir(resultsdir)
 
   message("Saving in ", savedir)
@@ -66,7 +69,7 @@ ivhandbook <- function(resultsdir = fs::path_wd("results")) {
 
   message("Starting Card data illustration...")
   set.seed(1984) # A fine vintage
-  card_app(savedir, nbs = 500, nsplits = 100)
+  card_app(savedir, nbs = 500, nsplits = 100, testing = testing)
 
   message("Starting Gelbach data illustration...")
   gelbach_bounds(savedir)

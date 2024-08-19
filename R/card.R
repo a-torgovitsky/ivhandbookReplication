@@ -1,10 +1,20 @@
 #' @title Empirical results for the Card illustration
 #'
 #' @inheritParams shared_savedir
+#' @inheritParams testing
 #' @param nbs Number of bootstrap replications for p-score weighting estimates
 #' @param nsplits Number of split repetitions for DDML
 #' @export
-card_app <- function(savedir = getwd(), nbs = 2, nsplits = 1) {
+card_app <- function(
+    savedir = getwd(),
+    nbs = 2,
+    nsplits = 1,
+    testing = FALSE) {
+  if (testing) {
+    nbs <- 2
+    nsplits <- 2
+  }
+
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   # Setup
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -40,7 +50,7 @@ card_app <- function(savedir = getwd(), nbs = 2, nsplits = 1) {
       df,
       XList[[specs$cov[i]]],
       nsplits = nsplits,
-      testing = FALSE
+      testing = testing # fewer learners included
     ) %>%
       {
         c(., id = paste(specs$est[i], specs$cov[i]))
