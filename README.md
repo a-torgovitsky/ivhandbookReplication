@@ -1,6 +1,6 @@
 # ivhandbookReplication
 
-This repo contains replication code for the empirical results in Mogstad and Torgovitsky ("Instrumental Variables with Heterogeneous Treatment Effects," 2024, _Handbook of Labor Economics_).
+This repo contains replication code for the empirical results in Mogstad and Torgovitsky ("Instrumental Variables with Heterogeneous Treatment Effects," 2024, prepared for the _Handbook of Labor Economics_).
 
 If you are just looking for sample code in R and Stata, you probably want the [ivhandbook](https://github.com/a-torgovitsky/ivhandbook) repository instead.
 
@@ -27,7 +27,7 @@ devtools::load_all() # Load the package locally
 ## Replicating
 
 The following code replicates what is reported in the paper.
-There may be minor differences in the Card application due to randomness in the bootstrap for the propensity score weighting estimates and randomness in the sample splits for the double/debiased machine learning (DDML) estimates. 
+There may be minor differences for some standard errors that are bootstrapped and for the double/debiased machine learning (DDML) estimates, which are stochastic because of sample splitting.
 
 ```r
 library(ivhandbookReplication)
