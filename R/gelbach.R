@@ -88,7 +88,7 @@ gelbach_moments <- function(
       .groups = "drop"
     ) %>%
     left_join(df_pscore, by = "z") %>%
-    mutate(z = as.character(forcats::as_factor(z))) -> df
+    mutate(z = as.character(haven::as_factor(z))) -> df
   return(df)
 }
 
